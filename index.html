@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cricket Club Website</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("https://wallpapercave.com/wp/wp7487127.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        
+        .overlay {
+            background: rgba(0, 0, 0, 0.75);
+            min-height: 100vh;
+            color: white;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        .menu button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            background: #1db954;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .menu button:hover {
+            background: #16a34a;
+            transform: scale(1.05);
+        }
+
+        .box {
+            background: white;
+            color: black;
+            width: 360px;
+            padding: 25px;
+            margin: 30px auto;
+            border-radius: 15px;
+            box-shadow: 0 0 20px black;
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button.action {
+            padding: 10px 20px;
+            background: #1db954;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button.action:hover {
+            background: #16a34a;
+        }
+
+        .about-img {
+            width: 120px;
+            border-radius: 50%;
+            margin: 10px;
+            border: 3px solid #1db954;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+<div class="overlay">
+
+    <h1>🏏 Cricket Club Interactive Website</h1>
+    <p>Inspired by Virat Kohli & MS Dhoni & Rohit sharma</p>
+
+    <div class="menu">
+        <button onclick="showLogin()">Login</button>
+        <button onclick="showRegister()">Register</button>
+        <button onclick="showAbout()">About Us</button>
+    </div>
+
+    
+    <div class="box" id="loginBox">
+        <h2>Login</h2>
+        <input type="text" id="loginUser" placeholder="Username">
+        <input type="password" id="loginPass" placeholder="Password">
+        <br><br>
+        <button class="action" onclick="login()">Login</button>
+    </div>
+
+    
+    <div class="box" id="registerBox">
+        <h2>Registration</h2>
+        <input type="text" placeholder="Player Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <br><br>
+        <button class="action" onclick="register()">Register</button>
+    </div>
+
+   
+    <div class="box" id="aboutBox">
+        <h2>About Our Club</h2>
+
+        <img src="https://wallpapercave.com/wp/wp7487127.jpg" class="about-img">
+        <img src="https://wallpapercave.com/wp/wp7487085.jpg" class="about-img">
+
+        <p>
+                This cricket club website helps players and fans stay connected with the club.
+    New members can register themselves easily, while existing users can log in anytime.
+    It saves time by providing important information in one place and improves communication within the club.
+        </p>
+
+        <p>
+            Legends like <b>Virat Kohli</b> and <b>MS Dhoni</b> inspire our passion for cricket.
+        </p>
+    </div>
+
+    <footer>
+        © 2026 Cricket Club Palampur | himachal pradesh  
+    </footer>
+
+</div>
+
+<script>
+    function hideAll() {
+        document.getElementById("loginBox").style.display = "none";
+        document.getElementById("registerBox").style.display = "none";
+        document.getElementById("aboutBox").style.display = "none";
+    }
+
+    function showLogin() {
+        hideAll();
+        document.getElementById("loginBox").style.display = "block";
+    }
+
+    function showRegister() {
+        hideAll();
+        document.getElementById("registerBox").style.display = "block";
+    }
+
+    function showAbout() {
+        hideAll();
+        document.getElementById("aboutBox").style.display = "block";
+    }
+
+    function login() {
+        alert("Login Successful ");
+        showAbout();
+    }
+
+    function register() {
+        alert("Registration Successful ");
+        showLogin();
+    }
+</script>
+
+</body>
+</html>
